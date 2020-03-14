@@ -73,6 +73,18 @@ kubectl create secret generic my-secret
 kubectl create secret tls tls-secret --cert=path/to/tls.cert --key=path/to/tls.key
  
 
+kubectl logs [pod name]
+
+kubectl logs [pod-name] -c [container-name]
+
+kubectl logs -p [pod-name]
+
+//streaming the logs
+kubectl logs -f [pod-name]
+
+kubectl describe pod [pod-name]
+
+kubectl exec [pod-nam] -it sh
 
 
  =================================================================================================================
