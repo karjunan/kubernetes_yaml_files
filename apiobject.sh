@@ -22,3 +22,6 @@ kubectl apply -f pod.yaml
 kubectl explain pod.spec
 kubectl explain pod.spec.containers
 
+
+#Delete a pod
+kubectl delete pod hello-world
