@@ -11,3 +11,8 @@ kubectl apply -f deployment.yaml
 kubectl scale deployment hello-world --replicas=2
 
 kubectl get pods -o wide
+
+kubectl describe pod hello-world
+
+kubectl explain pods.spec.restartPolicy
+
