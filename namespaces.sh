@@ -24,3 +24,11 @@ kubectl get pod --all-namespaces
 
 #Get data from a specific namespace
 kubectl get pods --namespace n1
+kubectl get pods -n n1
+kubectl get all --namespace=n1
+
+#delete all the pods in a namespace
+kubectl delete pods --all --namespace n1
+
+#delete the namespace
+kubectl delete namespace n1
