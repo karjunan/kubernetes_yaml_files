@@ -49,3 +49,22 @@ kubectl apply -f deployment.yaml
 kubectl get deployment hello-world -o yaml
 
 kubectl delete deployment hello-world
+
+
+#Add Verbosity to the output
+kubectl get pod hello-world -v 9
+
+kubectl get pod hello-world -v 8 
+
+
+#Authenticate using our local server
+kubectl proxy & curl http://localhost:8001/api/v1/namespaces/default/pods/hello-world 
+
+
+#Keep a watch on the pods
+kubectl get pods --watch -v 6
+
+#Access logs
+kubectl get logs hello-world
+kubectl get logs hello-world -v 6
+
