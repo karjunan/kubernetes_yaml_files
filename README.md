@@ -1,6 +1,20 @@
 
 ====================================kubernetes local===========================================================
 
+kubectl run --generator=run-pod/v1 nginx --image=nginx --dry-run -o yaml
+
+kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run --replicas=4 -o yaml
+
+kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run --replicas=4 -o yaml > nginx-deployment.yaml
+
+kubectl create deployment --image=nginx nginx --dry-run -o yaml > nginx-deployment.yaml
+
+kubectl expose pod redis --port=6379 --name redis-service --dry-run -o yaml
+
+kubectl expose pod nginx --port=80 --name nginx-service --dry-run -o yaml
+
+kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run -o yaml
+
  kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml  
  
  kubectl describe secret -n kube-system
